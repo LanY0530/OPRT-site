@@ -1,15 +1,35 @@
-const startTime = new Date("2024-01-01T00:00:00Z");
+// 初始值（比如 1000000）
+const baseCount = 1000000;
+
+// 起始时间戳（你部署网页时的 UTC 时间，换成你想要的）
+const launchTime = new Date("2024-01-01T00:00:00Z");
+
+// 每秒增长多少
+const perSecondGrowth = 0.5;  // 每秒增长0.5个单位
 
 function updateCounter() {
   const now = new Date();
-  const diff = Math.floor((now - startTime) / 1000);
+  const secondsElapsed = (now - launchTime) / 1000;
+  const total = Math.floor(baseCount + (secondsElapsed * perSecondGrowth));
+  document.getElementById("counter").textContent = total.toString().padStart(9, '0');
+}
 
-  const days = String(Math.floor(diff / 86400)).padStart(4, '0');
-  const hours = String(Math.floor((diff % 86400) / 3600)).padStart(2, '0');
-  const minutes = String(Math.floor((diff % 3600) / 60)).padStart(2, '0');
-  const seconds = String(diff % 60).padStart(2, '0');
+setInterval(updateCounter, 1000);
+updateCounter();
+// 初始值（比如 1000000）
+const baseCount = 1000000;
 
-  document.getElementById('counter').textContent = `${days} : ${hours} : ${minutes} : ${seconds}`;
+// 起始时间戳（你部署网页时的 UTC 时间，换成你想要的）
+const launchTime = new Date("2024-01-01T00:00:00Z");
+
+// 每秒增长多少
+const perSecondGrowth = 0.5;  // 每秒增长0.5个单位
+
+function updateCounter() {
+  const now = new Date();
+  const secondsElapsed = (now - launchTime) / 1000;
+  const total = Math.floor(baseCount + (secondsElapsed * perSecondGrowth));
+  document.getElementById("counter").textContent = total.toString().padStart(9, '0');
 }
 
 setInterval(updateCounter, 1000);
