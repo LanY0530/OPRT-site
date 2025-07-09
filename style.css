@@ -245,6 +245,18 @@ body::after {
   padding-bottom: 0.2rem;
 }
 
+.infopage {
+  background-color: #000;
+  color: #00ff00;
+  font-family: 'VT323', monospace;
+  text-shadow: 0 0 2px #00ff00, 0 0 10px #007f00;
+  margin: 0;
+  padding: 2rem 1.5rem 4rem;
+  min-height: 100vh;
+  overflow-y: auto;
+  position: relative;
+  line-height: 1.6;
+}
 
 .menu {
   position: fixed;
