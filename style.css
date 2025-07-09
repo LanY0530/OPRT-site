@@ -97,6 +97,19 @@ body {
   font-style: italic;
 }
 
+
+.timestamp {
+  font-size: 1.1rem;
+  color: #00dd00;
+  opacity: 0.75;
+  margin-top: 0.8rem;
+  letter-spacing: 1px;
+  font-style: italic;
+  text-shadow: 0 0 3px #00ff00;
+}
+
+
+
 /* === CRT 扫描线：修复层级并加强透明度 === */
 .scanlines {
   position: fixed;
