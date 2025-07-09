@@ -36,3 +36,24 @@ function updateCounter() {
 
 setInterval(updateCounter, 1000);
 updateCounter();
+
+
+function updateFauxTime() {
+  const now = new Date();
+
+  const hours = String(now.getHours()).padStart(2, "0");
+  const minutes = String(now.getMinutes()).padStart(2, "0");
+  const seconds = String(now.getSeconds()).padStart(2, "0");
+
+  const month = String(now.getMonth() + 1).padStart(2, "0");
+  const day   = String(now.getDate()).padStart(2, "0");
+
+  const fauxYear = 1993;
+
+  const formatted = `[ ${fauxYear}-${month}-${day} ${hours}:${minutes}:${seconds} ]`;
+
+  document.getElementById("faux-time").textContent = formatted;
+}
+
+setInterval(updateFauxTime, 1000);
+updateFauxTime();
