@@ -1,28 +1,27 @@
-function getNowUTC() {
-  return new Date(new Date().toISOString());
+function getNowET() {
+  // always UTC-5; omit DST for simplicity & repeatability
+  const nowUTC = new Date();
+  // UTC-5 in ms:
+  return new Date(nowUTC.getTime() - (5 * 3600 * 1000));
 }
 
-// 你设置的计数起点
-const startTime = new Date("2024-07-01T00:00:00Z");
-const baseCount = 85300000;
-const ratePerSecond = 0.42; // 手动调节
-
-
-const randomOffsetRange = 2;  // 每次显示值 ±2 内浮动
+// CONFIG – edit these three when the story changes
+const startTime = new Date("2025-04-09T00:00:00Z");
+const baseCount  = 0;
+const ratePerSecond = 0.000154;
+const randomOffsetRange = 2;   // ±2
 
 function computeCount() {
-  const now = getNowUTC();
-  const elapsedSeconds = (now - startTime) / 1000;
-  const rawCount = baseCount + (elapsedSeconds * ratePerSecond);
-
-  const randomOffset = (Math.random() * 2 - 1) * randomOffsetRange;
-
-  return Math.floor(rawCount + randomOffset);
+  const now = getNowET();
+  const elapsed = (now - startTime) / 1000;          // seconds
+  const raw     = baseCount + elapsed * ratePerSecond;
+  const jitter  = (Math.random() * 2 - 1) * randomOffsetRange;
+  return Math.floor(raw + jitter);
 }
 
 function updateCounter() {
-  const count = computeCount();
-  document.getElementById("counter").textContent = count.toLocaleString("en-US");
+  document.getElementById("counter")
+          .textContent = computeCount().toLocaleString("en-US");
 }
 
 setInterval(updateCounter, 1000);
