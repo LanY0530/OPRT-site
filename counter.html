@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>计数器</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      font-size: 28px;
+      text-align: center;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <div id="counter">0</div>
+  <script>
+    let count = 0;
+    setInterval(() => {
+      count++;
+      document.getElementById('counter').innerText = count;
+    }, 1000);
+  </script>
+</body>
+</html>
