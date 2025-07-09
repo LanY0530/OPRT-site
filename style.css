@@ -57,3 +57,12 @@ body {
   );
   z-index: 0;
 }
+
+.intro {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: #0f0;
+  opacity: 0.8;
+  line-height: 1.4;
+}
+
