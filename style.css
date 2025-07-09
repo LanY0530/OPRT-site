@@ -108,6 +108,65 @@ body {
   text-shadow: 0 0 3px #00ff00;
 }
 
+.menu {
+  position: fixed;
+  top: 1.5rem;
+  left: 2rem;
+  z-index: 20;
+  background-color: rgba(0, 16, 0, 0.95);
+  border: 1px solid #00ff00;
+  padding: 0.75rem 1rem;
+  box-shadow: 0 0 10px #00ff00;
+  font-family: 'VT323', monospace;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  margin-bottom: 0.5rem;
+}
+
+.menu a {
+  color: #00ff00;
+  text-decoration: none;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  display: inline-block;
+  transition: color 0.2s ease;
+}
+
+.menu a:hover {
+  color: #ffff00;
+  text-shadow: 0 0 5px #ffff00;
+}
+
+/* info 页面正文块 */
+.console.info {
+  text-align: left;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.infoblock {
+  color: #00ff00;
+  opacity: 0.88;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.infoblock h2 {
+  color: #ffff00;
+  font-size: 1.3rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  text-shadow: 0 0 2px #ffff00;
+}
+
 
 
 /* === CRT 扫描线：修复层级并加强透明度 === */
